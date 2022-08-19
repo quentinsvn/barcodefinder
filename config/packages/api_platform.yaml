@@ -1,0 +1,22 @@
+api_platform:
+    # The title of the API.
+    title: 'BarcodeFile API'
+
+    # The description of the API.
+    description: 'This is the BarcodeFile API.'
+
+    # The version of the API.
+    version: '1.0'
+
+    mapping:
+        paths: ['%kernel.project_dir%/src/Entity']
+    patch_formats:
+        json: ['application/merge-patch+json']
+    swagger:
+        versions: [3]
+        api_keys:
+            JWT:
+                name: Authorization
+                type: header
+
+    enable_swagger_ui: true

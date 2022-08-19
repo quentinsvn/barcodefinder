@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}BarcodeFinder - Réinitaliser votre mot de passe{% endblock %}
+
+{% block body %}
+    {% for flash_error in app.flashes('reset_password_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+    <h1>Réinitaliser votre mot de passe</h1>
+
+    <div class="container">
+        {{ form_start(requestForm) }}
+            <div class="card">
+                <div class="card-content">
+                        {{ form_row(requestForm.email) }}
+                        <div>
+                            <small>
+                                Entrer votre adresse e-mail pour réinitaliser votre mot de passe !
+                            </small>
+                        </div>
+
+                </div>
+                <div class="card-action right-align">
+                    <a href="{{ path('app_login') }}">Annuler</a>
+                    <button class="btn btn-primary">Demander un nouveau mot de passe</button>
+                </div>
+            </div>
+        {{ form_end(requestForm) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reset your password{% endblock %}
+
+{% block body %}
+    <h1>BarcodeFinder - Formulaire de réinitialisation de mot de passe</h1>
+
+    <div class="container">
+        {{ form_start(resetForm) }}
+            <div class="card">
+                <div class="card-content">
+                    {{ form_row(resetForm.plainPassword) }}
+                </div>
+                <div class="card-action right-align">
+                    <button class="btn btn-primary">Réinitaliser le mot de passe</button>
+                </div>
+            </div>
+        {{ form_end(resetForm) }}
+    </div>
+{% endblock %}

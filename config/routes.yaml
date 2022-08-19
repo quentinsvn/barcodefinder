@@ -1,0 +1,15 @@
+controllers:
+    resource: ../src/Controller/
+    type: attribute
+
+api_doc:
+    path: /api
+    methods: GET
+
+app_logout:
+    path: /logout
+    methods: GET
+
+authentication_token:
+    path: /authentication_token
+    methods: ['POST']

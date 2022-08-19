@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}BarcodeFinder{% endblock %}
+
+{% block body %}
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+
+    <h1>Inscription</h1>
+
+    <div class="container">
+        <div class="card">
+            {{ form_start(registrationForm) }}
+            <div class="card-content">
+                {{ form_row(registrationForm.email) }}
+                    
+                {{ form_row(registrationForm.plainPassword, {
+                    label: 'Mot de passe'
+                }) }}<br/>
+
+                <div>
+                    <label>
+                        {{ form_widget(registrationForm.agreeTerms, { 'label':  null}) }}
+                        <span>J'accepte les conditions d'utilisations</span>
+                    </label>
+                </div>
+            </div>
+            <div class="card-action right-align">
+                <a href="{{ path('app_login') }}" >J'ai déjà un compte</a>
+                <button type="submit" class="btn">S'inscrire</button>
+            </div>
+            {{ form_end(registrationForm) }}
+        </div>
+    </div>
+{% endblock %}

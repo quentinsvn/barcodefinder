@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+
+    <section class="sec_searchzone">
+        <div id="container" class="container">
+            <h1>BarcodeFinder</h1>
+            <div class="nav-wrapper">
+                <form class="nav" method="post">
+                    <div class="input-field white">
+                        <input name='isbn' id="search-field" type="search" required="" placeholder="Rechercher un code barre...">
+                        <label class="label-icon" for="search-field"><i class="material-icons">search</i></label>
+                        <i class="material-icons close_search" id="clear-input">close</i>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn waves-effect waves-light green" type="submit" id="search"> Rechercher </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec_intro">
+        <div class="container">
+            <div class="row">
+                <div class="col s12  add-height valign-wrapper">
+
+                    <div class="col s3 hide-on-small-only">
+                        <ion-icon name="barcode-outline" style="font-size: 250px;"></ion-icon>
+                    </div>
+                    
+                    <div class="col s9">
+                        <h2 style="margin: 0">Trouvez les produits qu'il vous faut !</h2>
+                        <p>Avec plus de 350+ millions de références, retrouvez n'importe quel produit grâce à son code barre via notre système de recherche !</p>
+                        <p>Envie de réutiliser nos données pour votre application ? Profitez de nos APIs à moindre coût !
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec_last_search">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h3>Derniers produits enregistrés</h3>
+
+                    {% if is_granted('ROLE_USER') %}
+                        {% for product in products %}
+                            {% if product.getUserid() == app.user.id %}
+                                {% if loop.index < 4 %}
+                                    <div class="col s3">
+
+                                        <div class="card">
+                                            <div class="card-image waves-effect waves-block waves-light">
+                                                <img class="activator" src="{{product.getProductImgSrc()}}">
+                                            </div>
+                                            <div class="card-content">
+                                                <span class="card-title activator grey-text text-darken-4">{{product.getProductName()}}<i class="material-icons right">more_vert</i></span>
+                                                <p><a href="{{ path('product', {isbn: product.getProductISBN()}) }}">Consulter</a></p>
+                                            </div>
+                                            <div class="card-reveal">
+                                                <span class="card-title grey-text text-darken-4">{{product.getProductName()}}<i class="material-icons right">close</i></span>
+                                                <p>ISBN : {{product.getProductISBN()}}</p>
+                                                <p>Catégorie : {{product.getProductCategory()}}</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    {% else %}
+                    <div class="alert card amber lighten-4 brown-text">
+                        <div class="card-content">
+                            <p><i class="material-icons">report_problem</i><span><a href="{{path('app_login')}}">Connectez-vous</a></span>et consulter vos derniers produits enregistrés depuis la plateforme !</p>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

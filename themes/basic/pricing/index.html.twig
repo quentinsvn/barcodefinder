@@ -1,0 +1,169 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="parallax-container">
+      <div class="parallax"><img src="themes/basic/img/bg_pricing.jpg"></div>
+    </div>
+    <div class="section white">
+      <div class="row container mt-3">
+        <h2 class="header">Tarifs</h2>
+        <p class="grey-text text-darken-3 lighten-3">Sélectionnez le tarif qui vous convient le mieux selon les besoins de votre application. Vous souhaitez moins de limites ? Contactez-nous pour un devis !</p>
+      </div>
+    </div>
+
+<!-- START PRICING TABLE CONTAINER -->
+
+        <div class="container mb-3">
+
+            <!-- START PRICING TABLE ROW -->
+            <div class="row">
+
+                <!-- MATERIALIZE CSS USES 12 COLUMN GRID SYSTEM, DETAILS http://materializecss.com/grid.html -->
+                <div class="col s12 m4">
+                    
+                    <!-- START PRICING PLAN -->
+                    <div class="card pricing style-2">
+                        
+                        <!-- START PLAN TITLE DIV. -->
+                        <!-- CHANGE COLOR BY CHANGING LAST CSS CLASS (teal) AVAILABLE COLOR CLASSES LISTED HERE http://materializecss.com/color.html -->
+                        <div class="plan-title waves-effect waves-block waves-light teal txt-center">
+                            <h5 class="white-text">
+                                <span class="plan">BASIC</span>
+                            </h5>
+                        </div>
+                        <!-- END PLAN TITLE DIV. -->
+                        
+                        <!-- START PRICE INFO DIV. -->
+                        <div class="price waves-effect waves-block waves-light teal lighten-1 txt-center">
+                            <h4 class="white-text">
+                                <span class="amount">Gratuit</span>
+                            </h4>
+                        </div>
+                        <!-- END PRICE INFO DIV. -->
+                        
+                        <div class="card-content">
+                            
+                            <!-- START FEATURE LIST -->
+                            <ul class="collection">
+                                
+                                <!-- USE FOLLOWING LIST ITEM AS EXAMPLE TO ADD TOOLTIP IN FEATURE -->
+                                <li class="collection-item"><b>10</b> recherches / jour</li>
+                                <li class="collection-item"><b>100</b> requêtes / jour</li>
+                                <li class="collection-item"><b>Format</b> JSON</li>              
+                                <li class="collection-item"><b>Accès</b> au support</li>
+                                <li class="collection-item"><b>Accès</b> sécurisé</li>             
+                            </ul>
+                            <!-- END FEATURE LIST -->
+                            
+                            <!-- START SIGN UP BUTTON -->
+                            <div class="plan-signup-btn">
+                                <a id="start-now-starter" class="btn waves-effect waves-block waves-light no-margin white-text" href="#">Commencer</a>
+                            </div>
+                            <!-- END SIGN UP BUTTON -->
+                            
+                        </div>
+                    </div>
+                    <!-- END PRICING PLAN -->
+                    
+                </div>
+
+                <!-- FEATURED PLAN ( USE EXTRA CLASS z-depth-4 TO RAISE FEATURED PLAN )-->
+                <div class="col s12 m4">
+                    
+                    <!-- START PRICING PLAN -->
+                    <div class="card pricing style-2 z-depth-4">
+                        
+                        <!-- START PLAN TITLE DIV. -->
+                        <div class="plan-title waves-effect waves-block waves-light yellow darken-3 txt-center">
+                            <h5 class="dark-grey-text">
+                                <span class="plan">POPULAIRE</span>
+                            </h5>
+                        </div>
+                        <!-- END PLAN TITLE DIV. -->
+                        
+                        <!-- START PRICE INFO DIV. -->
+                        <div class="price waves-effect waves-block waves-light yellow darken-2 txt-center">
+                            <h4 class="dark-grey-text">
+                                <span class="amount">5</span>
+                                <span class="currency">€</span>
+                                <span class="period">/ mois</span>
+                            </h4>
+                        </div>
+                        <!-- END PRICE INFO DIV. -->
+                        
+                        <div class="card-content">
+                            
+                            <!-- START FEATURE LIST -->
+                            <ul class="collection">
+                                <li class="collection-item"><b>1 000</b> recherches / jour</li>
+                                <li class="collection-item"><b>2 000</b> requêtes / jour</li>
+                                <li class="collection-item"><b>Format</b> JSON</li>              
+                                <li class="collection-item"><b>Accès</b> au support</li>
+                                <li class="collection-item"><b>Accès</b> sécurisé</li>    
+                            </ul>
+                            <!-- END FEATURE LIST -->
+                            
+                            <!-- START SIGN UP BUTTON -->
+                            <div class="plan-signup-btn">
+                                <a id="start-now-plus" class="btn-large waves-effect waves-block waves-light no-margin white-text yellow darken-2" href="#"><span class="dark-grey-text">Commencer</span></a>
+                            </div>
+                            <!-- END SIGN UP BUTTON -->
+                            
+                        </div>
+                    </div>
+                    <!-- END PRICING PLAN -->
+                    
+                </div>
+                <div class="col s12 m4">
+                    
+                    <!-- START PRICING PLAN -->
+                    <div class="card pricing style-2">
+                        
+                        <!-- START PLAN TITLE DIV. -->
+                        <div class="plan-title waves-effect waves-block waves-light teal txt-center">
+                            <h5 class="white-text">
+                                <span class="plan">PREMIUM</span>
+                            </h5>
+                        </div>
+                        <!-- END PLAN TITLE DIV. -->
+                        
+                        <!-- START PRICE INFO DIV. -->
+                        <div class="price waves-effect waves-block waves-light teal lighten-1 txt-center">
+                            <h4 class="white-text">
+                                <span class="amount">10</span>
+                                <span class="currency">€</span>
+                                <span class="period">/ mois</span>
+                            </h4>
+                        </div>
+                        <!-- END PRICE INFO DIV. -->
+                        
+                        <div class="card-content">
+                            
+                            <!-- START FEATURE LIST -->
+                            <ul class="collection">
+                                <li class="collection-item"><b>5 000</b> recherches / jour</li>
+                                <li class="collection-item"><b>5 000</b> requêtes / jour</li>
+                                <li class="collection-item"><b>Format</b> JSON</li>         
+                                <li class="collection-item"><b>Accès</b> au support</li>
+                                <li class="collection-item"><b>Accès</b> sécurisé</li>    
+                            </ul>
+                            <!-- END FEATURE LIST -->
+                            
+                            <!-- START SIGN UP BUTTON -->
+                            <div class="plan-signup-btn">
+                                <a id="start-now-premium" class="btn waves-effect waves-block waves-light no-margin white-text" href="">Commencer</a>
+                            </div>
+                            <!-- END SIGN UP BUTTON -->
+                            
+                        </div>
+                    </div>
+                    <!-- END PRICING PLAN -->
+                    
+                </div>
+            </div>
+            <!-- END PRICING TABLE ROW -->
+            
+        </div>	
+        <!-- END PRICING TABLE CONTAINER -->
+{% endblock %}

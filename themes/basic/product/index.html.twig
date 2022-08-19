@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<div class="container" style="margin-top: 5%; margin-bottom: 5%;">
+
+    <div class="card">
+        <div class="card-content">
+            <div class="row">
+                <div class="col m6 s12">
+                    <img style="width: 100%" src="{{img}}" />
+                </div>
+
+                <div class="col m6 s12">
+                    <p>ISBN {{isbn}}</p>
+                    <h5>{{title}}</h5>
+                    <p>Catégorie: <span class="green-text">{{categorie}}</span></p>
+                    <hr class="mb-5">
+                    <span class="vertical-align-top mr-4">
+                    
+
+                    <label>Description</label>
+                    <p>{{description}}</p>
+                    
+                    <ul class="collection with-header mt-5">
+                        <li class="collection-item"><div>Barcode Formats<a href="#!" class="secondary-content">ISBN-10 2409013783, ISBN-13 9782409013782</a></div></li>
+                        <li class="collection-item"><div>Consultations<a href="#!" class="secondary-content">38</a></div></li>
+                        <li class="collection-item"><div>Edit Product<a href="#!" class="secondary-content"><i class="material-icons">create</i></a></div></li>
+                    </ul>
+
+                    <div class="barcode">
+                        <h5>ISBN</h5>
+                        <img src="data:image/png;base64,{{barcode}}" />
+                    </div>
+
+                    <form method="post">
+                        <div class="btnProductMargin">
+                            {% for product in products %}
+                                {% if product.getUserid == app.user.id and product.getProductISBN == isbn %}
+                                    <a href="{{ path('delete_product', {id: product.getId()}) }}" style="margin-right: 5%;" class="waves-effect waves-light btn red"><i class="material-icons left">delete</i>Supprimer</a>
+                                {% endif %}
+                            {% endfor %}
+                            <button name="saveProduct" style="margin-right: 5%;" class="waves-effect waves-light btn green"><i class="material-icons left">save</i>Enregistrer</button>
+                            <a target="_blank" href="https://www.amazon.com/s?k={{isbn}}" class="waves-effect waves-light btn blue"><i class="material-icons left">shopping_basket</i>Acheter</a>
+                        </div>
+                    </form>
+                </div>  
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{# templates/account/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container mt-2">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">Mon compte</span>
+                <ul class="collection">
+                    <li class="collection-item"><strong>Email :</strong> {{ app.user.email }}<br></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

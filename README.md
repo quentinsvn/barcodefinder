@@ -37,6 +37,7 @@ Cela permet de retrouver plus facilement lors des prochaines visites les produit
 Avant de procéder à l'étape d'installation du projet, veuillez vous prémunir au minimum des éléments suivants :
 
 - Un serveur web PHP 8.1 minimum
+    - Les modules PHP [Imagick](https://www.php.net/manual/fr/book.imagick.php) et [gd-lib](https://www.php.net/manual/fr/book.image.php) doivent être installées et activer depuis votre fichier php.ini  
 - Une base de données SQL (PostgresSQL ou MySQL)
 - La bibliothèque de dépendances PHP [Composer](https://getcomposer.org/)
 - Un serveur de mail SMTP (pour l'envoi du mail de confirmation de compte et réinitialisation de mot de passe)

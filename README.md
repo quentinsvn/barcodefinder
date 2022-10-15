@@ -143,6 +143,18 @@ MAILER_DSN=smtp://user:password@hostname:port
 ```
 
 2. Sauvegarder le fichier
+   
+## Mail Hog
+> Messagerie en local
+> 
+1. Télécharger [link Mailhog].
+2. Lancer l'executable .exe
+3. Se rendre : http://localhost:8025/
+```conf
+# .env 
+MAILER_DSN=smtp://localhost:1025
+```
+4. Le mail est dans votre boite de réception
 
 ## Génération des clés SSL
 
@@ -150,3 +162,5 @@ Afin de gébérer vos clés SSL, tapez la commande suivante : `php bin/console l
 Cela devrait vous créer deux certificats SSL depuis le répertoire "config/jwt". 
 
 🎉 Félicitations ! Désormais le projet devrait être fonctionnel et visualisable depuis votre site web ! 🎉
+
+[link Mailhog]: https://github.com/mailhog/MailHog/releases
